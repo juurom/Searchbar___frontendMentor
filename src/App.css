@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
   min-height: 100vh;
+  background-color: hsl(180, 52%, 96%);
+  text-align: center;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 62.5%;
+}
+
+.top{
+  height: 100px;
+  position: relative;
+  background-color: hsl(180, 29%, 50%);
+  background-image: url(./images/bg-header-desktop.svg);
+}
+
+.searchArea{
+  position: absolute;
+  bottom: -25px;
+  left: 15vw;
+  width: 70vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  box-shadow: 0 0 10px 2px hsla(180, 29%, 50%, 0.2);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: right;
+}
+
+.searchArea form{
+  flex:1;
+}
+
+.searchBar{
+  width: 100%;
+  height: 50px;
+  border: 0; 
+  font-family: 'League Spartan', sans-serif;
+  font-size: 0.8rem;
+}
+
+.searchBar:focus, input:focus{
+  outline: none;
+}
+
+.clearBtn{
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: 0;
+  color: hsl(180, 29%, 50%);
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+}
+
+.searchArea .clearBtn:hover{
+  text-decoration: underline;
+}
+
+.keywordBox{
+  margin: 0 5px;
+  margin-top: 16px;
+  padding-left: 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 31%, 95%);
+  height: 18px;
+}
+
+.keywordBox button{
+  padding: 0 5px;
+  margin-left: 5px;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  color:rgb(255, 255, 255);
+  background-color:hsl(180, 29%, 50%);
+}
+
+.keywordBox button:hover{
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: hsl(180, 14%, 20%);
+}
+
+.jobList{
+  margin-top: 50px;
+}
+
+.job{
+  display: flex;
+  margin: 20px 15vw;
+  width:70vw;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 0px solid hsl(180, 29%, 50%); 
+  box-shadow: 0 5px 10px 2px hsla(180, 29%, 50%, 0.2);
+}
+
+.job:hover{
+  border-left: 5px solid hsl(180, 29%, 50%);
+  transition: all ease 0.3s 0s;
+}
+
+.job:hover .position{
+  color: hsl(180, 29%, 50%);
+}
+
+.info{
+  margin: auto 0;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.company{
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: hsl(180, 29%, 50%);
+}
+
+.new{
+  font-size: 0.5rem;
+  font-weight: 500;
+  display: inline;
+  margin: 1px 2px;
+  padding: 2px 5px;
+  border-radius: 6px;
   color: white;
+  background-color:  hsl(180, 29%, 50%);
 }
 
-.App-link {
-  color: #61dafb;
+.featured{
+  font-size: 0.5rem;
+  font-weight: 500;
+  display: inline;
+  margin: 1px 2px;
+  padding: 2px 5px;
+  border-radius: 6px;
+  color: white;
+  background-color: hsl(180, 8%, 52%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.position{
+  margin-top: 11px;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  font-weight: 700;
+}
+
+.condition{
+  margin-top: 11px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: hsl(180, 8%, 52%);
+}
+
+.keyword{
+  margin: auto 0;
+  margin-left: auto;
+}
+
+.keywordEach{
+  font-size: 0.8rem;
+  margin-right: 5px;
+  padding: 2px;
+  border-radius: 2px;
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+}
+
+.keywordEach:hover{
+  color: hsl(180, 31%, 95%);
+  background-color: hsl(180, 29%, 50%);
+}
+
+
+@media(max-width:500px){
+  img{
+    height:100%; width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .job{
+    display: block;
+    position: relative;
   }
+
+  .logo{
+    position: absolute;
+    top: -15px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .info{
+    margin: 0;
+  }
+
+  .keyword{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top:0.5px solid hsl(180, 8%, 52%);
+  }
+
+
 }
